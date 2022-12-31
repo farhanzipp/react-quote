@@ -1,7 +1,35 @@
+import { useState ,useEffect } from 'react'
+import axios from 'axios'
+
+import React from 'react'
+
 import { Button, Card, Col, Container, Row } from "react-bootstrap"
 import { BsTwitter } from "react-icons/bs"
 
+
+
 const QuoteCard = () => {
+    
+    const [quote, setQuote] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const getQuote = async () => {
+            try {
+                const response = await axios.get('https://animechan.vercel.app/api/random');
+                setQuote(response.data);
+                setError(null);
+            } catch (err) {
+                setError(err.message);
+                setQuote(null);
+            } finally {
+                setLoading(false);
+            }
+        };
+        getQuote();
+    }, [loading])
+
     return (
         <>
         
@@ -9,13 +37,13 @@ const QuoteCard = () => {
             <Card.Header>Quote</Card.Header>
             <Card.Body>
             <blockquote className="blockquote mb-0">
-                <p>
                 {' '}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                posuere erat a ante.{' '}
-                </p>
-                <footer className="blockquote-footer">
-                Someone famous in <cite title="Source Title">Source Title</cite>
+                    {loading && <p>Loading...</p>}
+                    {!loading && <p>{quote.quote}</p>}
+                {' '}
+                
+                <footer className="blockquote-footer mx-auto">
+                {!loading && quote.character} from <cite title="Source Title">{!loading && quote.anime}</cite>
                 </footer>
             </blockquote>
             </Card.Body>
