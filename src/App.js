@@ -1,10 +1,9 @@
-
-
 import { Container } from 'react-bootstrap';
+import AniQuote from './components/AniQuote';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
-import QuoteCard from './components/QuoteCard';
-import Quotes from './components/Quotes/Quotes';
+
+
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
       <Navigation/>
 
       <Container>
-        <QuoteCard />
+        <AniQuote />
       </Container>
       
       <Footer/>

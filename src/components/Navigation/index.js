@@ -7,8 +7,8 @@ const Navigation = () => {
         <Navbar bg="dark" variant="dark">
             <Container className="justify-content-center">
                 <Nav >
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#about">About me</Nav.Link>
+                    <Nav.Link href="#home">Quote</Nav.Link>
+                    <Nav.Link href="#about">About</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
