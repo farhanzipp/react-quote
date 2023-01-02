@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-import { Button, Card, Col, Container, Row } from "react-bootstrap"
+import { Button, Card, Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
 import { BsTwitter } from "react-icons/bs"
 
 
@@ -25,6 +25,17 @@ const AniQuote = () => {
         handleClick();
       }, []);
 
+      const handleTweet = () => {
+				const tweetText = ` "${quote}" - ${character}`;
+				const tweetTextEncoded = encodeURIComponent(tweetText);
+
+				window.open("https://twitter.com/intent/tweet?text=" + tweetTextEncoded, "twitter-tweet", "height=450, width=550, top=100, left=100");
+			}
+			const handleCopyText = () => {
+				 navigator.clipboard.writeText(quote);
+				 
+			}
+
   return (
     <div>
        
@@ -43,8 +54,19 @@ const AniQuote = () => {
         <Container fluid className="px-0 my-2">
             <Row>
                 <Col xs={7}>
-                    <Button><BsTwitter /></Button>
-                    <Button className="mx-2">Share</Button>
+										{/* twitter button */}
+                    <Button onClick={handleTweet}><BsTwitter /></Button>
+										{/* copy button with tooltip */}
+										<OverlayTrigger
+											trigger="click"
+											placement="right"
+											delay={{ show: 250, hide: 400 }}
+											overlay={
+												<Tooltip id="copy-tooltip">Copied!</Tooltip>
+											}
+										>
+                    	<Button onClick={handleCopyText} className="mx-2">Copy me</Button>
+									</OverlayTrigger>
                 </Col>
                 <Col onClick={handleClick} className="d-flex justify-content-end"><Button >New Quote</Button></Col>
             </Row>
