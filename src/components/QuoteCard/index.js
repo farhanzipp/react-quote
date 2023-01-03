@@ -7,7 +7,7 @@ import { BsTwitter } from "react-icons/bs"
 const AniQuote = () => {
     const [quote, setQuote] = useState("Click Motivate Me! and I'll get a quote that can motivate You....");
     const [anime, setAnime] = useState("WELCOME TO ANIQUOTE!");
-    const [character, setCharacter] = useState("Anons-Kun");
+    const [character, setCharacter] = useState("Anon-Kun");
     const [showTooltip, setShowTooltip] = useState(false);
     const [timeoutId, setTimeoutId] = useState(null);
 
