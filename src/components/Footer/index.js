@@ -1,15 +1,21 @@
-import { Container } from "react-bootstrap"
+import { Container, Nav, Navbar } from "react-bootstrap"
+import { NavItem } from "react-bootstrap/NavItem"
 import { AiFillHeart } from "react-icons/ai"
 
 const Footer = () => {
     return (
-        <footer className="fixed-bottom "  >
-            <Container fluid className="d-flex bg-dark text-muted justify-content-center">
-                <p>made with <AiFillHeart /> by farhan</p>
+        <Navbar bg="dark" variant="dark" fixed="bottom">
+            <Container className="justify-content-center">
+                <Nav >
+                    <Navbar.Text>Made with <AiFillHeart /> by</Navbar.Text>
+                    <Nav.Link href="https://github.com/farhanzipp" target="blank">farhanzipp</Nav.Link>
+                    <Navbar.Text>Powered by</Navbar.Text>
+                    <Nav.Link href="https://animechan.vercel.app/" target="_blank">animechan</Nav.Link>
+                </Nav>
             </Container>
-        </footer>
-    )
+        </Navbar>
         
+    )     
 }
 
 export default Footer
