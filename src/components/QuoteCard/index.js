@@ -35,14 +35,14 @@ const AniQuote = () => {
       const toggleTooltip = () => setShowTooltip(!showTooltip);
 
       const handleTweet = () => {
-				const tweetText = ` "${quote}" - ${character}`;
+				const tweetText = `"${quote}" ${"\n"}- ${character}`;
 				const tweetTextEncoded = encodeURIComponent(tweetText);
 
 				window.open("https://twitter.com/intent/tweet?text=" + tweetTextEncoded, "twitter-tweet", "height=450, width=550, top=100, left=100");
 			}
 
 			const handleCopyText = () => {
-        const textToCopy = `"${quote}" - ${character}`
+        const textToCopy = `"${quote}" ${"\n"}- ${character}`
 				 navigator.clipboard.writeText(textToCopy);
 			}
 
