@@ -42,7 +42,8 @@ const AniQuote = () => {
 			}
 
 			const handleCopyText = () => {
-				 navigator.clipboard.writeText(quote);
+        const textToCopy = `"${quote}" - ${character}`
+				 navigator.clipboard.writeText(textToCopy);
 			}
 
   return (
