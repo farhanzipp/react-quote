@@ -8,7 +8,7 @@ const Footer = () => {
             <Container className="justify-content-center">
                 <Nav >
                     <Navbar.Text>Made with <AiFillHeart /> by</Navbar.Text>
-                    <Nav.Link href="#home" target="blank">farhanzipp</Nav.Link>
+                    <Nav.Link href="https://github.com/farhanzipp" target="blank">farhanzipp</Nav.Link>
                     <Navbar.Text>Powered by</Navbar.Text>
                     <Nav.Link href="https://animechan.vercel.app/" target="_blank">animechan</Nav.Link>
                 </Nav>
