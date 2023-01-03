@@ -31,9 +31,9 @@ const AniQuote = () => {
 
 				window.open("https://twitter.com/intent/tweet?text=" + tweetTextEncoded, "twitter-tweet", "height=450, width=550, top=100, left=100");
 			}
+
 			const handleCopyText = () => {
 				 navigator.clipboard.writeText(quote);
-				 
 			}
 
   return (
@@ -43,14 +43,15 @@ const AniQuote = () => {
         <Card className="mt-5 border-secondary">
             <Card.Header>{anime}</Card.Header>
             <Card.Body>
-            <blockquote className="blockquote mb-0">
-                {quote ? <p>{quote}</p> : null}
-                <footer className="blockquote-footer">
-                    {character}
-                </footer>
-            </blockquote>
+							<blockquote className="blockquote mb-0">
+									{quote ? <p>{quote}</p> : null}
+									<footer className="blockquote-footer">
+											{character}
+									</footer>
+							</blockquote>
             </Card.Body>
         </Card>
+				{/* twitter, copy dan new quote button */}
         <Container fluid className="px-0 my-2">
             <Row>
                 <Col xs={7}>
@@ -58,17 +59,16 @@ const AniQuote = () => {
                     <Button onClick={handleTweet}><BsTwitter /></Button>
 										{/* copy button with tooltip */}
 										<OverlayTrigger
-											trigger="click"
+											trigger="hover focus"
 											placement="right"
-											delay={{ show: 250, hide: 400 }}
 											overlay={
 												<Tooltip id="copy-tooltip">Copied!</Tooltip>
 											}
 										>
-                    	<Button onClick={handleCopyText} className="mx-2">Copy me</Button>
+                    	<Button onClick={handleCopyText} className="mx-2">Copy</Button>
 									</OverlayTrigger>
                 </Col>
-                <Col onClick={handleClick} className="d-flex justify-content-end"><Button >New Quote</Button></Col>
+                <Col className="d-flex justify-content-end"><Button onClick={handleClick}>New Quote</Button></Col>
             </Row>
         </Container>
     </div>
