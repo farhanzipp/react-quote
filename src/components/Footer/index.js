@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="fixed-bottom "  >
             <Container fluid className="d-flex bg-dark text-muted justify-content-center">
-                <p>made with <AiFillHeart /> by farhan</p>
+                <p>made with <AiFillHeart /> by farhanzip</p>
             </Container>
         </footer>
     )
